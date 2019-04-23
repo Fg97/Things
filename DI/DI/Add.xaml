@@ -1,0 +1,19 @@
+﻿<Page x:Class="DI.Add"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="525"
+      Title="Add">
+
+    <Grid>
+        <DataGrid x:Name="add_data" HorizontalAlignment="Left" Margin="99,62,0,0" VerticalAlignment="Top" Height="163" Width="309"/>
+        <Button x:Name="add" Content="Добавить" HorizontalAlignment="Left" Margin="99,230,0,0" VerticalAlignment="Top" Width="309" Height="25" Click="add_click"/>
+        <Label x:Name="label" Content="Название компании:" HorizontalAlignment="Left" Margin="99,31,0,0" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="copany_name" MaxLength="30" HorizontalAlignment="Left" Height="20" Margin="232,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" />
+        <Label x:Name="errors" Content="" HorizontalAlignment="Left" Margin="99,4,0,0" VerticalAlignment="Top" Width="309"/>
+
+    </Grid>
+</Page>

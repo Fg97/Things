@@ -1,0 +1,14 @@
+﻿<Page x:Class="DI.Updata"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="525"
+      Title="Updata" Loaded="loaded_update_page" Unloaded="Page_Unloaded">
+    <Grid>
+        <DataGrid x:Name="data_grid_updata" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="222" Width="462"/>
+
+    </Grid>
+</Page>
