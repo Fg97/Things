@@ -1,0 +1,40 @@
+﻿<Page x:Class="DI2.ShareAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d" 
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="ShareAdd">
+
+	<Grid>
+		<Button Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="107,201,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
+		<Button Content="Назад" HorizontalAlignment="Left" Height="40" Margin="10,201,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
+
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="107,20,0,0" TextWrapping="Wrap" Text="" Name="nameTextBox" VerticalAlignment="Top" Width="220"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,20,0,0" TextWrapping="Wrap" Text="Название" VerticalAlignment="Top" Width="92" TextAlignment="Right"/>
+
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="107,45,0,0" TextWrapping="Wrap" Text="" Name="discountTextBox" VerticalAlignment="Top" Width="220"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,45,0,0" TextWrapping="Wrap" Text="Скидка" VerticalAlignment="Top" Width="92" TextAlignment="Right"/>
+
+		<DatePicker Name="startDate" HorizontalAlignment="Left" Height="22" Margin="107,68,0,0" VerticalAlignment="Top" Width="220"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,70,0,0" TextWrapping="Wrap" Text="Начало" VerticalAlignment="Top" Width="92" TextAlignment="Right"/>
+
+		<DatePicker Name="endDate" HorizontalAlignment="Left" Height="22" Margin="107,94,0,0" VerticalAlignment="Top" Width="220"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,95,0,0" TextWrapping="Wrap" Text="Окончание" VerticalAlignment="Top" Width="92" TextAlignment="Right"/>
+
+		<TextBox HorizontalAlignment="Left" Height="76" Margin="107,120,0,0" TextWrapping="Wrap" Text="" Name="descTextBox" VerticalAlignment="Top" Width="220"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,120,0,0" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" Width="92" TextAlignment="Right"/>
+		
+		<Button Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="342,201,0,0" VerticalAlignment="Top" Width="70" Click="EquipAdd_Click"/>
+		<Button Content="Удалить" HorizontalAlignment="Left" Height="40" Margin="412,201,0,0" VerticalAlignment="Top" Width="70" Click="EquipDelete_Click"/>
+		<ListBox Name="equipListBox" HorizontalAlignment="Left" Height="158" Margin="342,38,0,0" VerticalAlignment="Top" Width="140" SelectionMode="Multiple">
+			<StackPanel Name="equipPattern" Orientation="Horizontal" Visibility="Collapsed">
+				<TextBox HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="60" BorderThickness="0"/>
+				<DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" />
+			</StackPanel>
+		</ListBox>
+		<TextBlock HorizontalAlignment="Left" Height="18" Margin="342,20,0,0" TextWrapping="Wrap" Text="Снаряжение" VerticalAlignment="Top" Width="140" TextAlignment="Center"/>
+	</Grid>
+</Page>

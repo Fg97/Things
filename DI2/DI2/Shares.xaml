@@ -1,0 +1,54 @@
+﻿<Page x:Class="DI2.Shares"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d" 
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="Shares" Loaded="Page_Loaded">
+
+	<Grid>
+		<DataGrid Name="sharesDataGrid" Margin="0,20,0,0"/>
+		<Menu Height="20" VerticalAlignment="Top">
+			<MenuItem Name="add" Header="Добавить" Click="Add_Click"/>
+			<MenuItem Name="edit" Header="Изменить" Click="Edit_Click"/>
+			<MenuItem Name="remove" Header="Удалить" Click="Remove_Click"/>
+			<MenuItem Header="Поиск">
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Название:" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="nameTextBox" VerticalAlignment="Top" Width="80" TextChanged="nameTextBox_TextChanged"/>
+				</WrapPanel>
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Скидка:" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="discountTextBox" VerticalAlignment="Top" Width="80" TextChanged="discountTextBox_TextChanged"/>
+					<ComboBox Name="discountComboBox" HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" VerticalAlignment="Top" SelectionChanged="discountComboBox_SelectionChanged">
+						<ComboBoxItem Content="=" IsSelected="True"/>
+						<ComboBoxItem Content="&gt;"/>
+						<ComboBoxItem Content="&lt;"/>
+					</ComboBox>
+				</WrapPanel>
+
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Дата начала:" VerticalAlignment="Center"/>
+					<DatePicker Name="startDate" HorizontalAlignment="Left" Height="22" Margin="10,0,0,0" VerticalAlignment="Center" SelectedDateChanged="startDate_SelectedDateChanged"/>
+					<ComboBox Name="startDateComboBox" HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" VerticalAlignment="Top" SelectionChanged="startDateComboBox_SelectionChanged">
+						<ComboBoxItem Content="=" IsSelected="True"/>
+						<ComboBoxItem Content="&gt;"/>
+						<ComboBoxItem Content="&lt;"/>
+					</ComboBox>
+				</WrapPanel>
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Дата окончания:" VerticalAlignment="Center"/>
+					<DatePicker Name="endDate" HorizontalAlignment="Left" Height="22" Margin="10,0,0,0" VerticalAlignment="Center" SelectedDateChanged="endDate_SelectedDateChanged"/>
+					<ComboBox Name="endDateComboBox" HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" VerticalAlignment="Top" SelectionChanged="endDateComboBox_SelectionChanged">
+						<ComboBoxItem Content="=" IsSelected="True"/>
+						<ComboBoxItem Content="&gt;"/>
+						<ComboBoxItem Content="&lt;"/>
+					</ComboBox>
+				</WrapPanel>
+			</MenuItem>
+			<MenuItem Header="Назад" Click="Back_Click"/>
+		</Menu>
+	</Grid>
+</Page>

@@ -1,0 +1,28 @@
+﻿<Page x:Class="DI2.BidSum"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d" 
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="BidSum">
+
+	<Grid>
+		<Button Content="Назад" HorizontalAlignment="Left" Height="40" Margin="10,195,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
+		<DataGrid Name="clientDataGrid" HorizontalAlignment="Left" Height="100" Margin="10,90,0,0" VerticalAlignment="Top" Width="470" IsReadOnly="True"/>
+		
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="107,20,0,0" TextWrapping="Wrap" Text="" Name="clientTextBox" VerticalAlignment="Top" Width="220" TextChanged="clientTextBox_TextChanged"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="19,20,0,0" TextWrapping="Wrap" Text="Ф.И.О. клиента" VerticalAlignment="Top" Width="83" TextAlignment="Right"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="107,45,0,0"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ф.И.О." VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="182,45,0,0"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Данные" VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="257,45,0,0"/>
+		<ComboBox Name="clientComboBox" HorizontalAlignment="Left" Height="20" Margin="107,65,0,0" VerticalAlignment="Top" Width="220" IsEnabled="False" SelectionChanged="clientComboBox_SelectionChanged">
+			<StackPanel Name="clientPattern" Orientation="Horizontal" Visibility="Collapsed">
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+			</StackPanel>
+		</ComboBox>
+	</Grid>
+</Page>

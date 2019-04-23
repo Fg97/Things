@@ -1,0 +1,67 @@
+﻿<Page x:Class="DI2.Bids"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d"
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="Bids" Loaded="Page_Loaded">
+
+	<Grid>
+		<DataGrid Name="bidsDataGrid" Margin="0,47,0,0"/>
+		<RadioButton Content="Все" HorizontalAlignment="Left" Height="18" Margin="0,5,0,0" VerticalAlignment="Top" Width="42" Checked="allRadioButton_Checked"/>
+		<RadioButton Content="Используются" HorizontalAlignment="Left" Height="18" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Checked="usingRadioButton_Checked"/>
+		<RadioButton Content="Открытые" HorizontalAlignment="Left" Height="18" Margin="105,5,0,0" VerticalAlignment="Top" Width="78" Checked="openRadioButton_Checked"/>
+		<RadioButton Content="Закрытые" HorizontalAlignment="Left" Height="18" Margin="105,25,0,0" VerticalAlignment="Top" Width="79" Checked="closeRadioButton_Checked"/>
+		
+		<Menu HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,22,0,0">
+			<MenuItem Header="Действия">
+				<MenuItem Name="add" Header="Добавить заявку" Click="BidAdd_Click"/>
+				<MenuItem Name="remove" Header="Удалить заявку" Click="BidDelete_Click"/>
+				<MenuItem Header="Поиск клиента" Click="BidSum_Click"/>
+				<MenuItem Header="Поиск заявки">
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ф.И.О. клиента:" VerticalAlignment="Top"/>
+						<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="clientTextBox" VerticalAlignment="Top" Width="80" TextChanged="clientTextBox_TextChanged"/>
+					</WrapPanel>
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Данные клиента:" VerticalAlignment="Top"/>
+						<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="dataTextBox" VerticalAlignment="Top" Width="80" TextChanged="dataTextBox_TextChanged"/>
+					</WrapPanel>
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Логин пользователя:" VerticalAlignment="Top"/>
+						<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="userTextBox" VerticalAlignment="Top" Width="80" TextChanged="userTextBox_TextChanged"/>
+					</WrapPanel>
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="№ снаряжения:" VerticalAlignment="Top"/>
+						<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="equipTextBox" VerticalAlignment="Top" Width="80" TextChanged="equipTextBox_TextChanged"/>
+					</WrapPanel>
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Дата выдачи:" VerticalAlignment="Center"/>
+						<DatePicker Name="takeDate" HorizontalAlignment="Left" Height="22" Margin="10,0,0,0" VerticalAlignment="Center" SelectedDateChanged="takeDate_SelectedDateChanged"/>
+						<ComboBox Name="takeDateComboBox" HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" VerticalAlignment="Top" SelectionChanged="takeDateComboBox_SelectionChanged">
+							<ComboBoxItem Content="=" IsSelected="True"/>
+							<ComboBoxItem Content="&gt;"/>
+							<ComboBoxItem Content="&lt;"/>
+						</ComboBox>
+					</WrapPanel>
+					<WrapPanel>
+						<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Дата возврата:" VerticalAlignment="Center"/>
+						<DatePicker Name="refundDate" HorizontalAlignment="Left" Height="22" Margin="10,0,0,0" VerticalAlignment="Center" SelectedDateChanged="refundDate_SelectedDateChanged"/>
+						<ComboBox Name="refundDateComboBox" HorizontalAlignment="Left" Height="20" Margin="10,0,0,0" VerticalAlignment="Top" SelectionChanged="refundDateComboBox_SelectionChanged">
+							<ComboBoxItem Content="=" IsSelected="True"/>
+							<ComboBoxItem Content="&gt;"/>
+							<ComboBoxItem Content="&lt;"/>
+						</ComboBox>
+					</WrapPanel>
+				</MenuItem>
+				<Separator/>
+				<MenuItem Header="Перевести заявку в ожидание" Click="BidToUsing_Click"/>
+				<MenuItem Header="Закрыть заявку" Click="BidToClose_Click"/>
+			</MenuItem>
+		</Menu>
+		<Button Content="Назад" HorizontalAlignment="Left" Height="30" Margin="253,10,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
+
+	</Grid>
+</Page>

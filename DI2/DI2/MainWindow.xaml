@@ -1,0 +1,6 @@
+﻿<NavigationWindow x:Class="DI2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="??????????????" Height="350" Width="500" Source="Authorization.xaml"
+				ShowsNavigationUI="False">
+</NavigationWindow>

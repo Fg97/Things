@@ -1,0 +1,5 @@
+INSERT INTO [dbo].[users] ([id], [name], [login], [password], [role]) VALUES (1, N'Андрей', N'andrew', N'c4ca4238a0b923820dcc509a6f75849b', 1)
+INSERT INTO [dbo].[users] ([id], [name], [login], [password], [role]) VALUES (2, N'Алексей', N'aleks', N'c4ca4238a0b923820dcc509a6f75849b', 0)
+INSERT INTO [dbo].[users] ([id], [name], [login], [password], [role]) VALUES (3, N'Артем', N'artem', N'c4ca4238a0b923820dcc509a6f75849b', 1)
+INSERT INTO [dbo].[users] ([id], [name], [login], [password], [role]) VALUES (4, N'Антон', N'antman', N'c4ca4238a0b923820dcc509a6f75849b', 1)
+INSERT INTO [dbo].[users] ([id], [name], [login], [password], [role]) VALUES (5, N'Аркадий', N'arkham', N'c4ca4238a0b923820dcc509a6f75849b', 0)

@@ -1,0 +1,34 @@
+﻿<Page x:Class="DI2.Docs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d" 
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="Docs" Loaded="Page_Loaded">
+
+	<Grid>
+		<DataGrid Name="docsDataGrid" Margin="0,20,0,0"/>
+		<Menu Height="20" VerticalAlignment="Top">
+			<MenuItem Name="add" Header="Добавить" Click="Add_Click"/>
+			<MenuItem Name="edit" Header="Изменить" Click="Edit_Click"/>
+			<MenuItem Name="remove" Header="Удалить" Click="Remove_Click"/>
+			<MenuItem Name="docFind" Header="Поиск">
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Название документа:" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="nameTextBox" VerticalAlignment="Top" Width="80" TextChanged="nameTextBox_TextChanged"/>
+				</WrapPanel>
+				<WrapPanel Name="docFindUser">
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Логин пользователя:" VerticalAlignment="Top"/>
+					<TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Margin="10,0,0,0" Text="" Name="loginTextBox" VerticalAlignment="Top" Width="80" TextChanged="loginTextBox_TextChanged"/>
+				</WrapPanel>
+				<WrapPanel>
+					<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Дата создания:" VerticalAlignment="Center"/>
+					<DatePicker Name="createDate" HorizontalAlignment="Left" Height="22" Margin="10,0,0,0" VerticalAlignment="Center" SelectedDateChanged="createDate_SelectedDateChanged"/>
+				</WrapPanel>
+			</MenuItem>
+			<MenuItem Header="Назад" Click="Back_Click"/>
+		</Menu>
+	</Grid>
+</Page>

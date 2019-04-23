@@ -1,0 +1,27 @@
+﻿<Page x:Class="DI2.LogginedPagePattern"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d"
+      d:DesignHeight="300" d:DesignWidth="500"
+      Title="LogginedPagePattern">
+
+	<Grid>
+		<Frame Name="innerPage" JournalOwnership="OwnsJournal" NavigationUIVisibility="Hidden" Margin="0,25,0,0"></Frame>
+		<Menu Height="25" VerticalAlignment="Top">
+			<MenuItem Header="Меню">
+				<MenuItem Header="Заявки" Click="Bids_Click"></MenuItem>
+				<MenuItem Header="Клиенты" Click="Clients_Click"></MenuItem>
+				<MenuItem Header="Пользователи" Click="Users_Click"></MenuItem>
+				<MenuItem Header="Документы" Click="Docs_Click"></MenuItem>
+				<MenuItem Header="Снаряжение" Click="Equips_Click"></MenuItem>
+				<MenuItem Header="Акции" Click="Shares_Click"></MenuItem>
+				<MenuItem Header="Выход" Click="Exit_Click"></MenuItem>
+			</MenuItem>
+		</Menu>
+		<TextBlock Text="Привет, " Name="label_FIO" TextAlignment="Left" HorizontalAlignment="Right" Height="20"
+							 Margin="0,0,10,0" VerticalAlignment="Top" Width="auto" FontSize="12" />
+	</Grid>
+</Page>

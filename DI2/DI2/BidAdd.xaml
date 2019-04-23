@@ -1,0 +1,58 @@
+﻿<Page x:Class="DI2.BidAdd"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DI2"
+      mc:Ignorable="d" 
+      d:DesignHeight="275" d:DesignWidth="500"
+      Title="BidAdd">
+
+	<Grid>
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="107,20,0,0" TextWrapping="Wrap" Text="" Name="clientTextBox" VerticalAlignment="Top" Width="220" TextChanged="clientTextBox_TextChanged"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="19,20,0,0" TextWrapping="Wrap" Text="Ф.И.О. клиента" VerticalAlignment="Top" Width="83" TextAlignment="Right"/>
+
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="107,45,0,0"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Ф.И.О." VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="182,45,0,0"/>
+		<TextBlock HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Данные" VerticalAlignment="Top" Width="70" TextAlignment="Center" Margin="257,45,0,0"/>
+		<ComboBox Name="clientComboBox" HorizontalAlignment="Left" Height="20" Margin="107,65,0,0" VerticalAlignment="Top" Width="220" IsEnabled="False">
+			<StackPanel Name="clientPattern" Orientation="Horizontal" Visibility="Collapsed">
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+				<TextBlock HorizontalAlignment="Left" MinHeight="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MinWidth="60" TextAlignment="Center"/>
+			</StackPanel>
+		</ComboBox>
+
+		<Button Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="332,200,0,0" VerticalAlignment="Top" Width="70" Click="EquipAdd_Click"/>
+		<Button Content="Удалить" HorizontalAlignment="Left" Height="40" Margin="402,200,0,0" VerticalAlignment="Top" Width="70" Click="EquipDelete_Click"/>
+		<ListBox Name="equipListBox" HorizontalAlignment="Left" Height="150" Margin="332,45,0,0" VerticalAlignment="Top" Width="140" SelectionMode="Multiple">
+			<StackPanel Name="equipPattern" Orientation="Horizontal" Visibility="Collapsed">
+				<TextBox HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="60" BorderThickness="0"/>
+				<TextBox HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60" BorderThickness="0"/>
+			</StackPanel>
+		</ListBox>
+		<TextBlock HorizontalAlignment="Left" Height="18" Margin="332,10,0,0" TextWrapping="Wrap" Text="Снаряжение" VerticalAlignment="Top" Width="140" TextAlignment="Center"/>
+		<TextBlock HorizontalAlignment="Left" Height="18" Margin="332,28,0,0" TextWrapping="Wrap" Text="         Id        Количество" VerticalAlignment="Top" Width="140"/>
+
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,168,0,0" TextWrapping="Wrap" Text="Сумма без учета акций:" VerticalAlignment="Top" Width="133" TextAlignment="Right"/>
+		<TextBlock Name="sumTextBox" HorizontalAlignment="Left" Height="20" Margin="148,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+
+		<TextBlock HorizontalAlignment="Left" Height="20" Margin="10,193,0,0" TextWrapping="Wrap" Text="Сумма с учетом акций:" VerticalAlignment="Top" Width="133" TextAlignment="Right"/>
+		<TextBlock Name="sumShareTextBox" HorizontalAlignment="Left" Height="20" Margin="148,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+
+		<Button Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="107,225,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
+		<Button Content="Назад" HorizontalAlignment="Left" Height="40" Margin="10,225,0,0" VerticalAlignment="Top" Width="80" Click="Back_Click"/>
+
+		<TextBlock HorizontalAlignment="Left" Height="17" Margin="19,89,0,0" TextWrapping="Wrap" Text="Статус заявки" VerticalAlignment="Top" Width="83" TextAlignment="Right"/>
+		<RadioButton Name="openRadioButton" IsChecked="True" Content="Бронирует" HorizontalAlignment="Left" Height="17" Margin="107,90,0,0" VerticalAlignment="Top" Width="84" Checked="openRadioButton_Checked"/>
+		<RadioButton Name="usingRadioButton" Content="Забирает" HorizontalAlignment="Left" Height="17" Margin="196,90,0,0" VerticalAlignment="Top" Width="87" Checked="usingRadioButton_Checked"/>
+
+		<DatePicker Name="takeDate" HorizontalAlignment="Left" Height="22" Margin="107,112,0,0" VerticalAlignment="Top" Width="110"/>
+		<TextBlock HorizontalAlignment="Left" Margin="10,113,0,0" TextWrapping="Wrap" Text="Дата выдачи" VerticalAlignment="Top" Height="20" Width="92" TextAlignment="Right"/>
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="222,113,0,0" TextWrapping="Wrap" Text="00:00:00" Name="takeTime" VerticalAlignment="Top" Width="51"/>
+		
+		<DatePicker Name="refundDate" HorizontalAlignment="Left" Height="22" Margin="107,140,0,0" VerticalAlignment="Top" Width="110"/>
+		<TextBlock HorizontalAlignment="Left" Margin="10,141,0,0" TextWrapping="Wrap" Text="Дата возврата" VerticalAlignment="Top" Height="20" Width="92" TextAlignment="Right"/>
+		<TextBox HorizontalAlignment="Left" Height="20" Margin="222,141,0,0" TextWrapping="Wrap" Text="00:00:00" Name="refundTime" VerticalAlignment="Top" Width="51"/>
+	</Grid>
+</Page>
