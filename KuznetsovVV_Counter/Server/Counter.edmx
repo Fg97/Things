@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Counter.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CounterStoreContainer">
+    <EntitySet Name="CounterIndicationSet" EntityType="Counter.Store.CounterIndicationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CounterSet" EntityType="Counter.Store.CounterSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountSet" EntityType="Counter.Store.AccountSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AccountCounterIndication" Association="Counter.Store.AccountCounterIndication">
+      <End Role="Account" EntitySet="AccountSet" />
+      <End Role="CounterIndication" EntitySet="CounterIndicationSet" />
+    </AssociationSet>
+    <AssociationSet Name="CounterCounterIndication" Association="Counter.Store.CounterCounterIndication">
+      <End Role="Counter" EntitySet="CounterSet" />
+      <End Role="CounterIndication" EntitySet="CounterIndicationSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CounterIndicationSet">
+    <Key>
+      <PropertyRef Name="IndicationId" />
+    </Key>
+    <Property Name="IndicationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountKey" Type="int" Nullable="false" />
+    <Property Name="CounterKey" Type="int" Nullable="false" />
+    <Property Name="Measure" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CounterSet">
+    <Key>
+      <PropertyRef Name="CounterId" />
+    </Key>
+    <Property Name="CounterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountSet">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="AccountCounterIndication">
+    <End Role="Account" Type="Counter.Store.AccountSet" Multiplicity="1" />
+    <End Role="CounterIndication" Type="Counter.Store.CounterIndicationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="CounterIndication">
+        <PropertyRef Name="AccountKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CounterCounterIndication">
+    <End Role="Counter" Type="Counter.Store.CounterSet" Multiplicity="1" />
+    <End Role="CounterIndication" Type="Counter.Store.CounterIndicationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Counter">
+        <PropertyRef Name="CounterId" />
+      </Principal>
+      <Dependent Role="CounterIndication">
+        <PropertyRef Name="CounterKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Counter" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="CounterContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CounterIndicationSet" EntityType="Counter.CounterIndication" />
+          <EntitySet Name="CounterSet" EntityType="Counter.Counter" />
+          <EntitySet Name="AccountSet" EntityType="Counter.Account" />
+          <AssociationSet Name="AccountCounterIndication" Association="Counter.AccountCounterIndication">
+            <End Role="Account" EntitySet="AccountSet" />
+            <End Role="CounterIndication" EntitySet="CounterIndicationSet" />
+          </AssociationSet>
+          <AssociationSet Name="CounterCounterIndication" Association="Counter.CounterCounterIndication">
+            <End Role="Counter" EntitySet="CounterSet" />
+            <End Role="CounterIndication" EntitySet="CounterIndicationSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CounterIndication" Relationship="Counter.AccountCounterIndication" FromRole="Account" ToRole="CounterIndication" />
+        </EntityType>
+        <EntityType Name="CounterIndication">
+          <Key>
+            <PropertyRef Name="IndicationId" />
+          </Key>
+          <Property Name="IndicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CounterKey" Type="Int32" Nullable="false" />
+          <Property Name="Measure" Type="String" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Counter.AccountCounterIndication" FromRole="CounterIndication" ToRole="Account" />
+          <NavigationProperty Name="Counter" Relationship="Counter.CounterCounterIndication" FromRole="CounterIndication" ToRole="Counter" />
+        </EntityType>
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="CounterId" />
+          </Key>
+          <Property Name="CounterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="CounterIndication" Relationship="Counter.CounterCounterIndication" FromRole="Counter" ToRole="CounterIndication" />
+        </EntityType>
+        <Association Name="AccountCounterIndication">
+          <End Type="Counter.Account" Role="Account" Multiplicity="1" />
+          <End Type="Counter.CounterIndication" Role="CounterIndication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="CounterIndication">
+              <PropertyRef Name="AccountKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CounterCounterIndication">
+          <End Type="Counter.Counter" Role="Counter" Multiplicity="1" />
+          <End Type="Counter.CounterIndication" Role="CounterIndication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Counter">
+              <PropertyRef Name="CounterId" />
+            </Principal>
+            <Dependent Role="CounterIndication">
+              <PropertyRef Name="CounterKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CounterStoreContainer" CdmEntityContainer="CounterContainer">
+    <EntitySetMapping Name="CounterIndicationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Counter.CounterIndication)">
+        <MappingFragment StoreEntitySet="CounterIndicationSet">
+          <ScalarProperty Name="IndicationId" ColumnName="IndicationId" />
+          <ScalarProperty Name="AccountKey" ColumnName="AccountKey" />
+          <ScalarProperty Name="CounterKey" ColumnName="CounterKey" />
+          <ScalarProperty Name="Measure" ColumnName="Measure" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CounterSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Counter.Counter)">
+        <MappingFragment StoreEntitySet="CounterSet">
+          <ScalarProperty Name="CounterId" ColumnName="CounterId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Counter.Account)">
+        <MappingFragment StoreEntitySet="AccountSet">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

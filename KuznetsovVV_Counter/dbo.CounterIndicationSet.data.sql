@@ -1,0 +1,17 @@
+﻿SET IDENTITY_INSERT [dbo].[CounterIndicationSet] ON
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (1, 1, 1, N'Вода', 200, N'2017-02-05 18:48:14')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (2, 1, 2, N'Газ', 350, N'2017-02-05 18:48:29')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (3, 1, 3, N'Электричество', 1500, N'2017-02-05 18:48:40')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (4, 2, 1, N'Вода', 150, N'2017-03-05 18:48:48')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (5, 2, 2, N'Газ', 275, N'2017-03-05 18:49:28')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (6, 2, 3, N'Электричество', 750, N'2017-03-05 18:49:38')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (7, 3, 1, N'Вода', 560, N'2017-04-08 18:49:46')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (8, 3, 2, N'Газ', 450, N'2017-04-08 18:50:07')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (9, 3, 3, N'Электричество', 900, N'2017-04-08 18:50:21')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (10, 4, 1, N'Вода', 527, N'2017-04-20 18:51:27')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (11, 4, 2, N'Газ', 457, N'2017-04-20 18:51:35')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (12, 4, 3, N'Электричество', 877, N'2017-04-20 18:51:45')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (13, 5, 1, N'Вода', 625, N'2017-05-15 18:51:57')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (14, 5, 2, N'Газ', 980, N'2017-05-15 18:52:04')
+INSERT INTO [dbo].[CounterIndicationSet] ([IndicationId], [AccountKey], [CounterKey], [Measure], [Value], [Date]) VALUES (15, 5, 3, N'Электричество', 2150, N'2017-05-15 18:52:19')
+SET IDENTITY_INSERT [dbo].[CounterIndicationSet] OFF
