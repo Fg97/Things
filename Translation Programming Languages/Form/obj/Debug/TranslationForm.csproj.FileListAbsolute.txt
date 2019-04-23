@@ -1,0 +1,12 @@
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\bin\Debug\TranslationForm.exe.config
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\bin\Debug\TranslationForm.exe
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\bin\Debug\TranslationForm.pdb
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.csprojResolveAssemblyReference.cache
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.Properties.Resources.resources
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.csproj.GenerateResource.Cache
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.csproj.CoreCompileInputs.cache
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.exe
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.pdb
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\bin\Debug\TranslationClassLibrary.dll
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\bin\Debug\TranslationClassLibrary.pdb
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Form\obj\Debug\TranslationForm.translationForm.resources

@@ -1,0 +1,6 @@
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\bin\Debug\TranslationClassLibrary.dll
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\bin\Debug\TranslationClassLibrary.pdb
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\obj\Debug\TranslationClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\obj\Debug\TranslationClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\obj\Debug\TranslationClassLibrary.dll
+C:\Users\Victor-PC\Documents\Visual Studio 2017\Projects\Proga\TranslationProgrammingLanguages\Library\obj\Debug\TranslationClassLibrary.pdb
